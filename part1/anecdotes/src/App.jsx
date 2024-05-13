@@ -30,12 +30,19 @@ const App = () => {
     console.log(selected)
   }
 
+  let i = votes.indexOf(Math.max(...votes))
+  console.log("Index: ", + i)
+
   return (
     <div>
+      <h1>Anecdote of the day</h1>
       {anecdotes[selected]} <p />
       has {votes[selected]} votes <p />
       <button onClick={voteHandler}>vote</button>
       <button onClick={randomHandler}>next</button>
+      <h1>Anecdote with the most votes</h1>
+      {anecdotes[i]} <p />
+      has {votes[i]} votes
     </div>
   )
 }
